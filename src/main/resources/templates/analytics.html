@@ -11,9 +11,29 @@
 
 <h2>Total Topics: <span th:text="${topicsCount}"></span></h2>
 
+<h2>Completed Topics: <span th:text="${completedTopics}"></span></h2>
+
+<h2>Pending Topics: <span th:text="${pendingTopics}"></span></h2>
+
+<h2>Completion Percentage: <span th:text="${completionPercentage}"></span>%</h2>
+
+<h2>Average Difficulty: <span th:text="${averageDifficulty}"></span></h2>
+
+<h2>Highest Priority Topic: <span th:text="${highestPriorityTopicName}"></span></h2>
+
 <h2>Total Study Sessions: <span th:text="${schedulesCount}"></span></h2>
 
 <h2>Total Reminders: <span th:text="${remindersCount}"></span></h2>
+
+<br>
+
+<h2>Smart Recommendation</h2>
+<p th:text="${recommendation}"></p>
+
+<p>
+    This recommendation is generated based on difficulty level,
+    estimated study hours, deadline urgency, and priority score.
+</p>
 
 <a href="/dashboard">Back to Dashboard</a>
 

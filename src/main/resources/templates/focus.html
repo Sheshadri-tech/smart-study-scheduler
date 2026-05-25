@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Focus Score</title>
+</head>
+<body>
+
+<h1>Focus Score Engine</h1>
+
+<h2>Overall Focus Score: <span th:text="${focusScore}"></span>%</h2>
+
+<h3>Completion Score: <span th:text="${completionScore}"></span>/60</h3>
+<h3>Schedule Score: <span th:text="${scheduleScore}"></span>/25</h3>
+<h3>Reminder Score: <span th:text="${reminderScore}"></span>/15</h3>
+
+<p>
+    Focus Score is calculated based on topic completion,
+    study schedule creation, and reminder usage.
+</p>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

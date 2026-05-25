@@ -1,5 +1,6 @@
 package com.study.scheduler.entity;
 
+import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +16,9 @@ public class Topic {
 
     private int difficultyLevel; // 1 to 5
     private int priorityScore;
+    
+    private int estimatedHours;
+    private LocalDate targetCompletionDate;
 
     @ManyToOne
     @JoinColumn(name = "subject_id")
@@ -37,4 +41,20 @@ public class Topic {
 
     public Subject getSubject() { return subject; }
     public void setSubject(Subject subject) { this.subject = subject; }
+    
+    public int getEstimatedHours() {
+        return estimatedHours;
+    }
+
+    public void setEstimatedHours(int estimatedHours) {
+        this.estimatedHours = estimatedHours;
+    }
+
+    public LocalDate getTargetCompletionDate() {
+        return targetCompletionDate;
+    }
+
+    public void setTargetCompletionDate(LocalDate targetCompletionDate) {
+        this.targetCompletionDate = targetCompletionDate;
+    }
 }

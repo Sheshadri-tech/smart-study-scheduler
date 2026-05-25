@@ -19,14 +19,16 @@
     <li th:each="subject : ${subjects}">
         <span th:text="${subject.subjectName}"></span> -
         <span th:text="${subject.description}"></span>
+
+        |
+
+        <a th:href="@{/subjects/delete/{id}(id=${subject.id})}">
+            Delete
+        </a>
     </li>
 </ul>
 
 <a href="/dashboard">Back to Dashboard</a>
-
-<a th:href="@{/subjects/delete/{id}(id=${subject.id})}">
-    Delete
-</a>
 
 </body>
 </html>

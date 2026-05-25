@@ -23,14 +23,16 @@
         <span th:text="${reminder.reminderDate}"></span> |
         <span th:text="${reminder.reminderTime}"></span> |
         <span th:text="${reminder.message}"></span>
+
+        |
+
+        <a th:href="@{/reminders/delete/{id}(id=${reminder.id})}">
+            Delete
+        </a>
     </li>
 </ul>
 
 <a href="/dashboard">Back to Dashboard</a>
-
-<a th:href="@{/reminders/delete/{id}(id=${reminder.id})}">
-    Delete
-</a>
 
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Achievement Badges</title>
+</head>
+<body>
+
+<h1>Achievement Badges 🏅</h1>
+
+<ul>
+    <li>
+        First Subject Created:
+        <span th:text="${firstSubjectBadge ? '🏅 Unlocked' : '🔒 Locked'}"></span>
+    </li>
+
+    <li>
+        Topic Starter - Add 3 Topics:
+        <span th:text="${topicStarterBadge ? '🏅 Unlocked' : '🔒 Locked'}"></span>
+    </li>
+
+    <li>
+        Smart Planner - Create 3 Study Schedules:
+        <span th:text="${plannerBadge ? '🏅 Unlocked' : '🔒 Locked'}"></span>
+    </li>
+
+    <li>
+        Reminder Master - Add 1 Reminder:
+        <span th:text="${reminderBadge ? '🏅 Unlocked' : '🔒 Locked'}"></span>
+    </li>
+</ul>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Study Streak</title>
+</head>
+<body>
+
+<h1>Study Streak Tracker 🔥</h1>
+
+<h2>Current Streak:
+    <span th:text="${streak.currentStreak}"></span> Days
+</h2>
+
+<h2>Longest Streak:
+    <span th:text="${streak.longestStreak}"></span> Days
+</h2>
+
+<h2>Last Study Date:
+    <span th:text="${streak.lastStudyDate}"></span>
+</h2>
+
+<a href="/streak/update">Mark Today as Studied</a>
+
+<br><br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

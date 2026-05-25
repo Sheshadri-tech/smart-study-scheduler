@@ -8,6 +8,7 @@
 <h1>Topic Manager</h1>
 
 <form action="/topics/add" method="post">
+
     <input type="text" name="topicName" placeholder="Topic Name" required>
 
     <select name="status" required>
@@ -23,6 +24,16 @@
         <option value="4">4 - Hard</option>
         <option value="5">5 - Very Hard</option>
     </select>
+
+    <input type="number"
+           name="estimatedHours"
+           placeholder="Estimated Hours"
+           min="1"
+           required>
+
+    <input type="date"
+           name="targetCompletionDate"
+           required>
 
     <select name="subjectId" required>
         <option th:each="subject : ${subjects}"
@@ -40,14 +51,27 @@
     <li th:each="topic : ${topics}">
         <span th:text="${topic.topicName}"></span> -
         <span th:text="${topic.status}"></span> -
-        Difficulty: <span th:text="${topic.difficultyLevel}"></span> -
-        Priority Score: <span th:text="${topic.priorityScore}"></span> -
+
+        Difficulty:
+        <span th:text="${topic.difficultyLevel}"></span> -
+
+        Estimated Hours:
+        <span th:text="${topic.estimatedHours}"></span> -
+
+        Target Date:
+        <span th:text="${topic.targetCompletionDate}"></span> -
+
+        Priority Score:
+        <span th:text="${topic.priorityScore}"></span> -
+
         Subject:
         <span th:text="${topic.subject != null ? topic.subject.subjectName : 'No Subject'}"></span>
 
         |
 
-        <a th:href="@{/topics/delete/{id}(id=${topic.id})}">Delete</a>
+        <a th:href="@{/topics/delete/{id}(id=${topic.id})}">
+            Delete
+        </a>
     </li>
 </ul>
 

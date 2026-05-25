@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weekly Study Report</title>
+</head>
+<body>
+
+<h1>Weekly Study Report</h1>
+
+<h2>Total Topics: <span th:text="${totalTopics}"></span></h2>
+<h2>Completed Topics: <span th:text="${completedTopics}"></span></h2>
+<h2>Pending Topics: <span th:text="${pendingTopics}"></span></h2>
+<h2>Completion Percentage: <span th:text="${completionPercentage}"></span>%</h2>
+
+<h2>Total Study Schedules: <span th:text="${totalSchedules}"></span></h2>
+<h2>Total Reminders: <span th:text="${totalReminders}"></span></h2>
+
+<h2>Highest Priority Topic: <span th:text="${highestPriorityTopicName}"></span></h2>
+
+<br>
+
+<button onclick="window.print()">Print / Save as PDF</button>
+
+<br><br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>
