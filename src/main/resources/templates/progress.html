@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Progress Tracker</title>
+</head>
+<body>
+
+<h1>Progress Tracker</h1>
+
+<h3>Total Topics: <span th:text="${totalTopics}"></span></h3>
+<h3>Completed Topics: <span th:text="${completedTopics}"></span></h3>
+<h3>Pending Topics: <span th:text="${pendingTopics}"></span></h3>
+
+<h2>Overall Progress: <span th:text="${progressPercent}"></span>%</h2>
+
+<progress th:value="${progressPercent}" max="100"></progress>
+
+<br><br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

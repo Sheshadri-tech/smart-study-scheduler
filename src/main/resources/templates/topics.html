@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Topic Manager</title>
+</head>
+<body>
+
+<h1>Topic Manager</h1>
+
+<form action="/topics/add" method="post">
+    <input type="text" name="topicName" placeholder="Topic Name" required>
+
+    <select name="status" required>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+    </select>
+
+    <select name="difficultyLevel" required>
+        <option value="1">1 - Easy</option>
+        <option value="2">2 - Basic</option>
+        <option value="3">3 - Medium</option>
+        <option value="4">4 - Hard</option>
+        <option value="5">5 - Very Hard</option>
+    </select>
+
+    <select name="subjectId" required>
+        <option th:each="subject : ${subjects}"
+                th:value="${subject.id}"
+                th:text="${subject.subjectName}">
+        </option>
+    </select>
+
+    <button type="submit">Add Topic</button>
+</form>
+
+<h2>All Topics</h2>
+
+<ul>
+    <li th:each="topic : ${topics}">
+        <span th:text="${topic.topicName}"></span> -
+        <span th:text="${topic.status}"></span> -
+        Difficulty: <span th:text="${topic.difficultyLevel}"></span> -
+        Priority Score: <span th:text="${topic.priorityScore}"></span> -
+        Subject:
+        <span th:text="${topic.subject != null ? topic.subject.subjectName : 'No Subject'}"></span>
+
+        |
+
+        <a th:href="@{/topics/delete/{id}(id=${topic.id})}">Delete</a>
+    </li>
+</ul>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

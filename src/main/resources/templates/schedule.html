@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Schedule Builder</title>
+</head>
+<body>
+
+<h1>Schedule Builder</h1>
+
+
+<form action="/schedule/auto-generate" method="post">
+    <button type="submit">Auto Generate Schedule</button>
+</form>
+
+<br>
+
+<form action="/schedule/add" method="post">
+
+    <select name="topicId" required>
+        <option th:each="topic : ${topics}"
+                th:value="${topic.id}"
+                th:text="${topic.topicName}">
+        </option>
+    </select>
+
+    <input type="date" name="studyDate" required>
+    <input type="time" name="startTime" required>
+    <input type="time" name="endTime" required>
+    <input type="text" name="notes" placeholder="Notes">
+
+    <button type="submit">Add Schedule</button>
+</form>
+
+<h2>All Study Schedules</h2>
+
+<ul>
+    <li th:each="schedule : ${schedules}">
+        <span th:text="${schedule.studyDate}"></span> |
+        <span th:text="${schedule.startTime}"></span> -
+        <span th:text="${schedule.endTime}"></span> |
+        <span th:text="${schedule.topic.topicName}"></span> |
+        <span th:text="${schedule.notes}"></span>
+        <a th:href="@{/schedule/delete/{id}(id=${schedule.id})}">
+    Delete    </a>
+    </li>
+</ul>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

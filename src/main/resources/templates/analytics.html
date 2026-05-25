@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Analytics Dashboard</title>
+</head>
+<body>
+
+<h1>Study Analytics Dashboard</h1>
+
+<h2>Total Subjects: <span th:text="${subjectsCount}"></span></h2>
+
+<h2>Total Topics: <span th:text="${topicsCount}"></span></h2>
+
+<h2>Total Study Sessions: <span th:text="${schedulesCount}"></span></h2>
+
+<h2>Total Reminders: <span th:text="${remindersCount}"></span></h2>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>
