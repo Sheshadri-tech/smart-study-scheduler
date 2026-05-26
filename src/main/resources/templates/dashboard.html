@@ -1,29 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Smart Study Scheduler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
 
-<h1>Smart Study Scheduler Dashboard</h1>
+<body class="bg-light">
 
-<h3>Welcome User</h3>
-<ul>
-    <li><a href="/subjects">Subject Manager</a></li>
-    <li><a href="/topics">Topic Manager</a></li>
-    <li><a href="/schedule">Schedule Builder</a></li>
-    <li><a href="/progress">Progress Tracker</a></li>
-    <li><a href="/timer">Study Timer</a></li>
-    <li><a href="/reminders">Reminder / Notification Panel</a></li>
-    <li><a href="/profile">User Profile</a></li>
-    <li><a href="/analytics">Analytics Dashboard</a></li>
-    <li><a href="/streak">Study Streak Tracker</a></li>
-    <li><a href="/badges">Achievement Badges</a></li>
-    <li><a href="/report">Weekly Study Report</a></li>
-    <li><a href="/focus">Focus Score</a></li>
-</ul>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand">Smart Study Scheduler</span>
+        <a href="/logout" class="btn btn-outline-light">Logout</a>
+    </div>
+</nav>
 
-<br><br>
-<a href="/logout">Logout</a>
+<div class="container mt-5">
+
+    <div class="text-center mb-4">
+        <h1>AI-Powered Personalized Learning Assistant</h1>
+        <p class="text-muted">Plan smarter, track progress, and improve learning consistency.</p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <a href="/subjects" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>📚 Subject Manager</h4>
+                        <p>Manage your study subjects.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/topics" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>📝 Topic Manager</h4>
+                        <p>Add topics with difficulty and deadlines.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/schedule" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>🗓 Smart Scheduler</h4>
+                        <p>Generate priority-based study plans.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/analytics" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>📊 Analytics</h4>
+                        <p>View progress and recommendations.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/progress" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>✅ Progress Tracker</h4>
+                        <p>Track completed and pending topics.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/timer" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>⏱ Pomodoro Timer</h4>
+                        <p>Boost focus using study sessions.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/reminders" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>🔔 Reminders</h4>
+                        <p>Create study reminders.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/streak" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>🔥 Study Streak</h4>
+                        <p>Track consistency and habits.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/badges" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>🏅 Badges</h4>
+                        <p>Unlock achievement milestones.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/report" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>📄 Weekly Report</h4>
+                        <p>Generate printable study reports.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/focus" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>🎯 Focus Score</h4>
+                        <p>Measure learning productivity.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a href="/profile" class="text-decoration-none">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+                        <h4>👤 Profile</h4>
+                        <p>View learner profile details.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
