@@ -1,6 +1,8 @@
 package com.study.scheduler.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +11,9 @@ import com.study.scheduler.repository.UserRepository;
 
 @Controller
 public class RegisterController {
+	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
     private UserRepository userRepository;
@@ -27,7 +32,7 @@ public class RegisterController {
         User user = new User();
         user.setFullName(fullName);
         user.setEmail(email);
-        user.setPassword(password);
+        user.setPassword(passwordEncoder.encode(password));
         user.setRole("USER");
 
         userRepository.save(user);

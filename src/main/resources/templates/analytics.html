@@ -26,7 +26,7 @@
             <div class="card shadow text-center">
                 <div class="card-body">
                     <h5>Total Subjects</h5>
-                    <h2 th:text="${subjectsCount}"></h2>
+                    <h2 th:text="${subjectsCount}">0</h2>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
             <div class="card shadow text-center">
                 <div class="card-body">
                     <h5>Total Topics</h5>
-                    <h2 th:text="${topicsCount}"></h2>
+                    <h2 th:text="${topicsCount}">0</h2>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
             <div class="card shadow text-center">
                 <div class="card-body">
                     <h5>Completed</h5>
-                    <h2 th:text="${completedTopics}"></h2>
+                    <h2 th:text="${completedTopics}">0</h2>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <div class="card shadow text-center">
                 <div class="card-body">
                     <h5>Pending</h5>
-                    <h2 th:text="${pendingTopics}"></h2>
+                    <h2 th:text="${pendingTopics}">0</h2>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
     <div class="card shadow mt-4">
         <div class="card-body">
             <h4>Smart Recommendation</h4>
-            <p th:text="${recommendation}"></p>
+            <p th:text="${recommendation}">No recommendation available.</p>
             <p class="text-muted">
                 This recommendation is generated based on difficulty level,
                 estimated study hours, deadline urgency, and priority score.
@@ -89,27 +89,27 @@
         </div>
     </div>
 
-    <div class="card shadow mt-4">
+    <div class="card shadow mt-4 mb-5">
         <div class="card-body">
             <h4>Additional Insights</h4>
-            <p>Completion Percentage: <strong th:text="${completionPercentage}"></strong>%</p>
-            <p>Average Difficulty: <strong th:text="${averageDifficulty}"></strong></p>
-            <p>Highest Priority Topic: <strong th:text="${highestPriorityTopicName}"></strong></p>
-            <p>Total Study Sessions: <strong th:text="${schedulesCount}"></strong></p>
-            <p>Total Reminders: <strong th:text="${remindersCount}"></strong></p>
+            <p>Completion Percentage: <strong th:text="${completionPercentage}">0</strong>%</p>
+            <p>Average Difficulty: <strong th:text="${averageDifficulty}">0.0</strong></p>
+            <p>Highest Priority Topic: <strong th:text="${highestPriorityTopicName}">No topics available</strong></p>
+            <p>Total Study Sessions: <strong th:text="${schedulesCount}">0</strong></p>
+            <p>Total Reminders: <strong th:text="${remindersCount}">0</strong></p>
         </div>
     </div>
 
 </div>
 
 <script th:inline="javascript">
-    let completedTopics = [[${completedTopics}]];
-    let pendingTopics = [[${pendingTopics}]];
+    let completedTopics = /*[[${completedTopics}]]*/ 0;
+    let pendingTopics = /*[[${pendingTopics}]]*/ 0;
 
-    let subjectsCount = [[${subjectsCount}]];
-    let topicsCount = [[${topicsCount}]];
-    let schedulesCount = [[${schedulesCount}]];
-    let remindersCount = [[${remindersCount}]];
+    let subjectsCount = /*[[${subjectsCount}]]*/ 0;
+    let topicsCount = /*[[${topicsCount}]]*/ 0;
+    let schedulesCount = /*[[${schedulesCount}]]*/ 0;
+    let remindersCount = /*[[${remindersCount}]]*/ 0;
 
     new Chart(document.getElementById('completionChart'), {
         type: 'pie',

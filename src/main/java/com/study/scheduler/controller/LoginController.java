@@ -1,6 +1,7 @@
 package com.study.scheduler.controller;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,9 @@ import com.study.scheduler.repository.UserRepository;
 @Controller
 public class LoginController {
 
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+	
     @Autowired
     private UserRepository userRepository;
 
@@ -27,8 +31,8 @@ public class LoginController {
 
         User user = userRepository.findByEmail(email);
 
-        if (user != null && user.getPassword().equals(password)) {
-            session.setAttribute("loggedUser", user);
+        if (user != null && passwordEncoder.matches(password, user.getPassword())) {
+        	session.setAttribute("loggedUser", user);
             return "redirect:/dashboard";
         }
 
